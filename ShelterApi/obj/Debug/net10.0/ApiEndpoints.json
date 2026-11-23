@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "ShelterApi.Controllers.SheltersController",
+    "Method": "allShelter",
+    "RelativePath": "(Shelter)/allShelter",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

@@ -139,3 +139,4 @@ C:\Users\SzlivkaAZ\Desktop\Backend\API_Stuff\ShelterApp\ShelterApi\ShelterApi\ob
 C:\Users\SzlivkaAZ\Desktop\Backend\API_Stuff\ShelterApp\ShelterApi\ShelterApi\obj\Debug\net10.0\ShelterApi.pdb
 C:\Users\SzlivkaAZ\Desktop\Backend\API_Stuff\ShelterApp\ShelterApi\ShelterApi\obj\Debug\net10.0\ShelterApi.genruntimeconfig.cache
 C:\Users\SzlivkaAZ\Desktop\Backend\API_Stuff\ShelterApp\ShelterApi\ShelterApi\obj\Debug\net10.0\ref\ShelterApi.dll
+C:\Users\SzlivkaAZ\Desktop\Backend\API_Stuff\ShelterApp\ShelterApi\ShelterApi\obj\Debug\net10.0\ShelterApi.sourcelink.json
