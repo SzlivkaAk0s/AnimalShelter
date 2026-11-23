@@ -11,6 +11,22 @@
   },
   {
     "ContainingType": "ShelterApi.Controllers.SheltersController",
+    "Method": "newShelter",
+    "RelativePath": "shelters/newShelter",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newShelterDTO",
+        "Type": "ShelterApi.Models.DTOs.NewShelterDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ShelterApi.Controllers.SheltersController",
     "Method": "getbyId",
     "RelativePath": "shelters/shelterbyId",
     "HttpMethod": "GET",

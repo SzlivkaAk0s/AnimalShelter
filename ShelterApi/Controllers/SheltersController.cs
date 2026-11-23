@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ShelterApi.Models;
 using Microsoft.EntityFrameworkCore;
+using ShelterApi.Models.DTOs;
 
 namespace ShelterApi.Controllers
 {
@@ -50,6 +51,36 @@ namespace ShelterApi.Controllers
             {
                 return StatusCode(404, new { message = e.Message });
             }
+        }
+
+        [HttpPost("newShelter")]
+        public async Task<IActionResult> newShelter(NewShelterDTO newShelterDTO)
+        {
+            try
+            {
+                var shelter = new Shelter
+                {
+                    Id = Guid.NewGuid(),
+                    Name = newShelterDTO.Name,
+                    City = newShelterDTO.City,
+                    Capacity = newShelterDTO.Capacity,
+                    RegTime = DateTime.Now
+                };
+
+                if (shelter != null)
+                {
+                    await _animalshelterContext.AddAsync(shelter);
+                    await _animalshelterContext.SaveChangesAsync();
+
+                    return StatusCode(201, shelter);
+                }
+                return BadRequest();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+            
         }
     }
 }
