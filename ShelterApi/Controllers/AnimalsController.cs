@@ -146,5 +146,24 @@ namespace ShelterApi.Controllers
                 return StatusCode(404, new {message = e.Message});
             }
         }
+
+        [HttpGet("allAnimalsWithShelter")]
+        public async Task<IActionResult> AnimalsWithShelters()
+        {
+            try
+            {
+                var animalsWithShelter = _animalshelterContext.Animals.Join(_animalshelterContext.Shelters, ani => ani.ShelterId, sh => sh.Id, (ani, sh) => new { Allat_neve = ani.Name, Allat_faja = ani.Species, Menhely_neve = sh.Name });
+
+                if (animalsWithShelter != null)
+                {
+                    return StatusCode(200, animalsWithShelter);
+                }
+                return StatusCode(404);
+            }
+            catch (Exception)
+            {
+                return StatusCode(404);
+            }
+        }
     }
 }
