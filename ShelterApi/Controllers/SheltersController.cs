@@ -82,5 +82,27 @@ namespace ShelterApi.Controllers
             }
             
         }
+
+        [HttpDelete("deleteShelter")]
+        public async Task<IActionResult> deleteShelter([FromQuery] Guid id)
+        {
+            try
+            {
+                var shelter = await _animalshelterContext.Shelters.SingleOrDefaultAsync(sh => sh.Id == id);
+
+                if (shelter != null)
+                {
+                    _animalshelterContext.Shelters.Remove(shelter);
+                    await _animalshelterContext.SaveChangesAsync();
+
+                    return StatusCode(200, new { message = "Sikeres törlés" });
+                }
+                return NotFound();
+            }
+            catch (Exception e)
+            {
+                return StatusCode(404, new {message = e.Message});
+            }
+        }
     }
 }
