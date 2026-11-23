@@ -13,6 +13,18 @@
     }
   ],
   "paths": {
+    "/animals/allAnimal": {
+      "get": {
+        "tags": [
+          "Animals"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/shelters/allShelter": {
       "get": {
         "tags": [
@@ -187,6 +199,9 @@
     }
   },
   "tags": [
+    {
+      "name": "Animals"
+    },
     {
       "name": "Shelters"
     }
