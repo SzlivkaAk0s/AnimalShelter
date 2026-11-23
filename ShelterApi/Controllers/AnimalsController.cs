@@ -59,6 +59,12 @@ namespace ShelterApi.Controllers
         {
             try
             {
+                var shelterid = await _animalshelterContext.Shelters.AnyAsync(sh => sh.Id == newAnimalDTO.ShelterId);
+                if (!shelterid)
+                {
+                    return StatusCode(404, new {message ="nincs ilyen menhely"});
+                }
+
                 var animal = new Animal
                 {
                     Id = Guid.NewGuid(),
@@ -79,9 +85,9 @@ namespace ShelterApi.Controllers
                 }
                 return StatusCode(404);
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                return StatusCode(404, new { message = e.Message });
+                return StatusCode(404);
             }
             
         }
@@ -113,6 +119,11 @@ namespace ShelterApi.Controllers
         {
             try
             {
+                var shelterid = await _animalshelterContext.Shelters.AnyAsync(sh => sh.Id == updateAnimalDTO.ShelterId);
+                if (!shelterid)
+                {
+                    return StatusCode(404, new { message = "nincs ilyen menhely" });
+                }
                 var animal = await _animalshelterContext.Animals.SingleOrDefaultAsync(ani => ani.Id == id);
 
                 if (animal != null)
