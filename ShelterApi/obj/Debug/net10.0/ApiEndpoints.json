@@ -26,6 +26,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ShelterApi.Controllers.AnimalsController",
+    "Method": "newAnimal",
+    "RelativePath": "newAnimal",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newAnimalDTO",
+        "Type": "ShelterApi.Models.DTOs.NewAnimalDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ShelterApi.Controllers.SheltersController",
     "Method": "allShelter",
     "RelativePath": "shelters/allShelter",
