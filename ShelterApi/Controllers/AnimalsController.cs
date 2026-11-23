@@ -33,5 +33,24 @@ namespace ShelterApi.Controllers
                 return StatusCode(404, new { message = e.Message });
             }
         }
+
+        [HttpGet("animalById")]
+        public async Task<IActionResult> getAnimalById([FromQuery]Guid id)
+        {
+            try
+            {
+                var animal = await _animalshelterContext.Animals.SingleOrDefaultAsync(ani=>ani.Id== id);
+
+                if(animal == null)
+                {
+                    return StatusCode(404);
+                }
+                return StatusCode(200, animal);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(404, new {message = e.Message});
+            }
+        }
     }
 }

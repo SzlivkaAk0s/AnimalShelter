@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShelterApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+88b7b1140c98b6a8c352676a8b2a78a95adc05d3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a84fd88ded30aef5d8c19dc6b27189d8909570f5")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShelterApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShelterApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
