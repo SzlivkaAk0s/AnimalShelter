@@ -13,10 +13,32 @@
     }
   ],
   "paths": {
-    "/(Shelter)/allShelter": {
+    "/shelters/allShelter": {
       "get": {
         "tags": [
           "Shelters"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/shelters/shelterbyId": {
+      "get": {
+        "tags": [
+          "Shelters"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
         ],
         "responses": {
           "200": {
