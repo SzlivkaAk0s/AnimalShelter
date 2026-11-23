@@ -54,7 +54,7 @@ namespace ShelterApi.Controllers
             }
         }
 
-        [HttpPost("/newAnimal")]
+        [HttpPost("newAnimal")]
         public async Task<IActionResult> newAnimal(NewAnimalDTO newAnimalDTO)
         {
             try
@@ -84,6 +84,28 @@ namespace ShelterApi.Controllers
                 return StatusCode(404, new { message = e.Message });
             }
             
+        }
+
+        [HttpDelete("deleteAnimal")]
+        public async Task<IActionResult> deleteAnimal([FromQuery]Guid id)
+        {
+            try
+            {
+                var animal = await _animalshelterContext.Animals.SingleOrDefaultAsync(anim => anim.Id == id);
+
+                if (animal != null)
+                {
+                    _animalshelterContext.Animals.Remove(animal);
+                    await _animalshelterContext.SaveChangesAsync();
+
+                    return StatusCode(200, new { message = "sikeres törlés!" });
+                }
+                return StatusCode(404);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(404, new { message = e.Message });
+            }
         }
     }
 }

@@ -47,7 +47,7 @@
         }
       }
     },
-    "/newAnimal": {
+    "/animals/newAnimal": {
       "post": {
         "tags": [
           "Animals"
@@ -72,6 +72,28 @@
           },
           "required": true
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/animals/deleteAnimal": {
+      "delete": {
+        "tags": [
+          "Animals"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"

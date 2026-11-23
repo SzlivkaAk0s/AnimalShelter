@@ -27,8 +27,24 @@
   },
   {
     "ContainingType": "ShelterApi.Controllers.AnimalsController",
+    "Method": "deleteAnimal",
+    "RelativePath": "animals/deleteAnimal",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ShelterApi.Controllers.AnimalsController",
     "Method": "newAnimal",
-    "RelativePath": "newAnimal",
+    "RelativePath": "animals/newAnimal",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
