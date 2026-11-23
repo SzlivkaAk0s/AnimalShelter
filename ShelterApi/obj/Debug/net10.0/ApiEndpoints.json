@@ -58,6 +58,27 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ShelterApi.Controllers.AnimalsController",
+    "Method": "UpdateAnimal",
+    "RelativePath": "animals/updateAnimal",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "updateAnimalDTO",
+        "Type": "ShelterApi.Models.DTOs.UpdateAnimalDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ShelterApi.Controllers.SheltersController",
     "Method": "allShelter",
     "RelativePath": "shelters/allShelter",

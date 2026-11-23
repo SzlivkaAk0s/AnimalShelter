@@ -107,5 +107,33 @@ namespace ShelterApi.Controllers
                 return StatusCode(404, new { message = e.Message });
             }
         }
+
+        [HttpPut("updateAnimal")]
+        public async Task<IActionResult> UpdateAnimal([FromQuery] Guid id, UpdateAnimalDTO updateAnimalDTO)
+        {
+            try
+            {
+                var animal = await _animalshelterContext.Animals.SingleOrDefaultAsync(ani => ani.Id == id);
+
+                if (animal != null)
+                {
+                    animal.Name = updateAnimalDTO.Name;
+                    animal.Species = updateAnimalDTO.Species;
+                    animal.Age = updateAnimalDTO.Age;
+                    animal.Weight = updateAnimalDTO.Weight;
+                    animal.ShelterId = updateAnimalDTO.ShelterId;
+
+                    _animalshelterContext.Animals.Update(animal);
+                    await _animalshelterContext.SaveChangesAsync();
+
+                    return StatusCode(200, new { message = "sikeres frissítés" });
+                }
+                return StatusCode(404);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(404, new {message = e.Message});
+            }
+        }
     }
 }
