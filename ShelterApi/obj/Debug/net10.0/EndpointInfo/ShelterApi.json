@@ -272,6 +272,18 @@
           }
         }
       }
+    },
+    "/shelters/allShelterWithAnimals": {
+      "get": {
+        "tags": [
+          "Shelters"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {

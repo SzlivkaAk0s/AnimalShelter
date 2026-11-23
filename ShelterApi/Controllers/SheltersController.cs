@@ -130,5 +130,24 @@ namespace ShelterApi.Controllers
                 return StatusCode(404, new { message = e.Message });
             }
         }
+
+        [HttpGet("allShelterWithAnimals")]
+        public async Task<IActionResult> SheltersWAnimals()
+        {
+            try
+            {
+                var shelterswAnim = await _animalshelterContext.Shelters.Include(sh => sh.Animals).Select(sh=> new {sh.Name, Allatok = sh.Animals.Select(allat => allat.Name).ToList()}).ToListAsync();
+
+                if (shelterswAnim != null)
+                {
+                    return StatusCode(200, shelterswAnim);
+                }
+                return StatusCode(404, new { message = "A tömb üres." });
+            }
+            catch (Exception)
+            {
+                return StatusCode(404);
+            }
+        }
     }
 }

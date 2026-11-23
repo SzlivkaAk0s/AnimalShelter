@@ -90,6 +90,16 @@
   },
   {
     "ContainingType": "ShelterApi.Controllers.SheltersController",
+    "Method": "SheltersWAnimals",
+    "RelativePath": "shelters/allShelterWithAnimals",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ShelterApi.Controllers.SheltersController",
     "Method": "deleteShelter",
     "RelativePath": "shelters/deleteShelter",
     "HttpMethod": "DELETE",
